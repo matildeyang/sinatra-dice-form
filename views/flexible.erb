@@ -1,26 +1,16 @@
-<h1>5d3</h1>
+<html>
+<h1> <%= @dice_num %>d<%= @side_num%> </h1>
 
-<a href="/process_roll?dice=5&sides=3">Roll again</a>
+<a href="/process_roll?dice=@dice_num&sides=@side_num">Roll again</a>
 
-|
 
 <a href="/">Go back home</a>
 
-# turn these into loop 
 <ol>
-    <li>
-      <em>Result:</em> <strong>1</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>1</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>3</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>2</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>3</strong>
-    </li>
+  <% @rolls.each do |a_roll| %>
+    <li><em>
+      Results</em>: <%= a_roll %>
+    </em></li>
+  <%end%>
 </ol>
+</html>
